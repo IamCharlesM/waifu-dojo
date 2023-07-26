@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <h1 class="text-4xl">Product</h1>
 
         <p class="text-2xl">
@@ -14,7 +15,15 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+    layout: 'products',
+    title: 'Product title',
+    description: 'Product description',
+    image: 'https://nuxtjs.org/nuxt-card.png',
+    url: 'https://nuxtjs.org'
+})
 const { id } = useRoute().params
+
 </script>
 
 <style scoped>
