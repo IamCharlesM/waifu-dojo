@@ -4,10 +4,7 @@
 <div class="grid grid-cols-4 gap-5">
     <div v-for="product in products" :key="product.id">
         <NuxtLink :to="`/products/${product.id}`">
-            <div class="bg-gray-100 p-5">
-                <h2 class="text-2xl font-bold">{{ product.title }}</h2>
-                <p class="text-xl">{{ product.price }}</p>
-            </div>
+            <ProductCard :product="product" />
         </NuxtLink>
 </div>
 </div>
