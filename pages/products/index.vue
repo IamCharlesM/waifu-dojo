@@ -1,19 +1,20 @@
 <template>
     <div>
 
-        <h1 class="text-4xl">Products</h1>
-
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt commodi esse quo, in perferendis eos quidem sed unde sit tenetur assumenda a? Consectetur repudiandae nam qui et cum voluptatibus quam?
-        </p>
-
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt commodi esse quo, in perferendis eos quidem sed unde sit tenetur assumenda a? Consectetur repudiandae nam qui et cum voluptatibus quam?
-        </p>
+<div class="grid grid-cols-4 gap-5">
+    <div v-for="product in products" :key="product.id">
+        <NuxtLink :to="`/products/${product.id}`">
+            <div class="bg-gray-100 p-5">
+                <h2 class="text-2xl font-bold">{{ product.title }}</h2>
+                <p class="text-xl">{{ product.price }}</p>
+            </div>
+        </NuxtLink>
+</div>
+</div>
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 definePageMeta({
     layout: 'products',
     title: 'Products',
@@ -21,6 +22,9 @@ definePageMeta({
     image: 'https://nuxtjs.org/nuxt-card.png',
     url: 'https://nuxtjs.org'
 })
+
+// Fetch products from API
+const {data: products } =  await useFetch('https://fakestoreapi.com/products')
 </script>
 
 <style scoped>
