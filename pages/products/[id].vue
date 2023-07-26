@@ -1,20 +1,23 @@
 <template>
     <div>
-
-        <h1 class="text-4xl">Product</h1>
-
-        <p class="text-2xl">
-            {Product details for {{ id }}}
-        </p>
-
-        <p class="text-2xl">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id distinctio accusantium, quod quae quos illum expedita exercitationem? Officia, sapiente atque minus obcaecati eum similique maiores hic tempore repudiandae beatae. Commodi!
-        </p>
+        <h1>{{ product.title }}</h1>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
+        <img :src="product.image" alt="product image">
 
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+const { id } = useRoute().params
+const uri = `https://fakestoreapi.com/products/${id}`
+
+// Fetch product from API
+const { data: product } = await useFetch(uri)
+
+
+
+
 definePageMeta({
     layout: 'products',
     title: 'Product title',
@@ -22,7 +25,7 @@ definePageMeta({
     image: 'https://nuxtjs.org/nuxt-card.png',
     url: 'https://nuxtjs.org'
 })
-const { id } = useRoute().params
+
 
 </script>
 
