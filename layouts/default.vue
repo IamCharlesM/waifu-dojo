@@ -13,6 +13,9 @@
           <li>
             <NuxtLink class="link text-3xl font-bold btn" to="/products">Products</NuxtLink>
           </li>
+          <li>
+            <NuxtLink class="link text-3xl font-bold btn" to="/products/abc">Products abc</NuxtLink>
+          </li>
         </ul>
       </nav>
     </header>

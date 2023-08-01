@@ -1,6 +1,6 @@
 <template>
   <div>
-    <productDetails :product="product" />
+    <ProductDetails :product="product" />
   </div>
 </template>
 
@@ -11,11 +11,23 @@ const uri = `https://fakestoreapi.com/products/${id}`;
 // Fetch product from API
 const { data: product } = await useFetch(uri);
 
+if (!product.value) {
+  throw createError({
+    statusCode: 404,
+    message: "Product not found",
+    fatal: true,
+  });
+}
+
 definePageMeta({
   layout: "products",
-  title: product.title,
-  description: product.description,
-  image: product.image,
+});
+
+useSeoMeta({
+  title: product?.value.title,
+  description: product?.value.description,
+  ogImage: product?.value.image,
+  ogDescription: product?.value.description,
   url: "https://nuxtjs.org",
 });
 </script>
