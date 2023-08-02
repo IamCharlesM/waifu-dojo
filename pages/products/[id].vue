@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- DYNAMIC PAGES! -->
     <ProductDetails :product="product" />
   </div>
 </template>
@@ -28,7 +29,7 @@ useSeoMeta({
   description: product?.value.description,
   ogImage: product?.value.image,
   ogDescription: product?.value.description,
-  url: "https://nuxtjs.org",
+  url: "https://charlesisa.dev",
 });
 </script>
 
