@@ -12,12 +12,16 @@
 </template>
 
 <script setup>
-definePageMeta({
-    layout: 'products',
-    title: 'Products',
-    description: 'Products page description',
-    image: 'https://nuxtjs.org/nuxt-card.png',
-    url: 'https://nuxtjs.org'
+useHead({
+    title: 'Chest Box | Merch',
+    meta: [
+        {
+            name: 'description',
+            content: 'Chest Box Merch'
+        }
+    ],
+    ogImage: 'https://nuxtjs.org/nuxt-card.png',
+    ogDescription: 'Chest Box Merch',
 })
 
 // Fetch products from API

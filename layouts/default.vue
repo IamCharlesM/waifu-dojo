@@ -2,7 +2,7 @@
   <div>
     <header class="shadow-sm bg-white">
       <nav class=" container mx-auto p-4 flex justify-between">
-        <NuxtLink class="link text-3xl font-bold" to="/">Waifu Dojo</NuxtLink>
+        <NuxtLink class="link text-3xl font-bold" to="/">Chest Box</NuxtLink>
         <ul class="flex gap-4">
             <li>
                 <NuxtLink class="link text-3xl font-bold" to="/">Home</NuxtLink>
