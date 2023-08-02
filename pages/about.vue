@@ -10,7 +10,12 @@
 </template>
 
 <script setup>
-const {data} = await useFetch('/api/chest?name=box');
+const {data} = await useFetch('/api/chest?name=box', {
+    method: 'post',
+    body: {
+        age: 31
+    }
+});
 </script>
 
 <style scoped>
