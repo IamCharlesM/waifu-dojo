@@ -10,12 +10,7 @@
 </template>
 
 <script setup>
-const {data} = await useFetch('/api/chest?name=box', {
-    method: 'post',
-    body: {
-        age: 31
-    }
-});
+const {data} = await useFetch('/api/currency/USD');
 </script>
 
 <style scoped>
