@@ -1,6 +1,6 @@
 <template>
     <div>
-
+<!-- This should work if th store API connects and loops -->
 <div class="grid grid-cols-4 gap-5">
     <div v-for="product in products" :key="product.id">
         <NuxtLink :to="`/products/${product.id}`">
@@ -20,7 +20,7 @@ useHead({
             content: 'Chest Box Merch'
         }
     ],
-    ogImage: 'https://nuxtjs.org/nuxt-card.png',
+    ogImage: 'https://charlesisa.dev/nuxt-card.png',
     ogDescription: 'Chest Box Merch',
 })
 
